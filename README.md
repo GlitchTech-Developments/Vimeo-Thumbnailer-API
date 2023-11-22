@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to Vimeo Thumbnailer API 👋</h1>
 <p>
   <img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/GlitchTech-Developments/Vimeo-Thumbnailer-API/main">
-  <a href="https://github.com/GlitchTech-Developments/Vimeo-Thumbnailer-API/tree/main/blob/LICENCE" target="_blank">
+  <a href="https://github.com/GlitchTech-Developments/Vimeo-Thumbnailer-API/blob/main/LICENCE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <a href="https://twitter.com/GlitchTechEU" target="_blank">
@@ -42,4 +42,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2023 [GlitchTech Developments](https://github.com/GlitchTech-Developments).<br />
-This project is [MIT](https://github.com/GlitchTech-Developments/Vimeo-Thumbnailer-API/tree/main/blob/LICENCE) licensed.
+This project is [MIT](https://github.com/GlitchTech-Developments/Vimeo-Thumbnailer-API/blob/main/LICENCE) licensed.
