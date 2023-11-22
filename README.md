@@ -11,6 +11,10 @@
 
 > Vimeo video thumbnail mirror on the edge which could for instance be used for quick preview thumbnail displays
 
+## Example
+
+[Click here to open the example response](https://vimeo-thumbnailer-api.vercel.app/thumbnail/886933615/data?revalidate=true)
+
 ## Install
 
 ```sh
