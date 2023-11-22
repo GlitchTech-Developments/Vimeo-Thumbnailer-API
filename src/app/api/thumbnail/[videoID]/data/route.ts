@@ -6,6 +6,8 @@ import {
 import { imageToBase64 } from "@/utils/imageToBase64";
 import { NextResponse } from "next/server";
 
+export const runtime = "edge";
+
 interface Params {
   params: { videoID: string };
 }
