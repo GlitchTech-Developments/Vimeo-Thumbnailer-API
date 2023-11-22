@@ -5,6 +5,14 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  reactStrictMode: true,
+  rewrites: async () => [
+    {
+      source: "/thumbnail/:videoID/:path*",
+      destination: "/api/thumbnail/:videoID/:path*",
+    },
+  ],
+};
 
 export default config;
