@@ -11,6 +11,7 @@ interface Params {
 }
 
 export const runtime = "edge";
+export const revalidate = 7200000; // 2 hours in milliseconds
 
 const debug = false;
 const sizes = ["small", "medium", "large"] as const;
