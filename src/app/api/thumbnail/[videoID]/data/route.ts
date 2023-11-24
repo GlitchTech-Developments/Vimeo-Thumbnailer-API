@@ -10,14 +10,34 @@ interface Params {
   params: { videoID: string };
 }
 
-const debug = false;
+export const runtime = "edge";
 
+const debug = false;
 const sizes = ["small", "medium", "large"] as const;
 type Sizes = (typeof sizes)[number];
+
+const defaultHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET",
+};
 
 export const GET = async (request: Request, { params }: Params) => {
   try {
     const { videoID } = params;
+    if (!videoID)
+      return NextResponse.json(
+        {
+          success: false,
+          requested_resource: request.url,
+          error: "No videoID provided",
+          data: null,
+        },
+        {
+          headers: {
+            ...defaultHeaders,
+          },
+        },
+      );
 
     const searchParams = new URL(request.url).searchParams;
     const size = searchParams.get("sizes")
@@ -83,7 +103,7 @@ export const GET = async (request: Request, { params }: Params) => {
     }
 
     return NextResponse.json(
-      kvEntry.kv_data !== null
+      kvEntry.kv_data !== null && kvEntry.kv_data?.data !== null
         ? kvEntry
         : {
             success: true,
@@ -106,6 +126,11 @@ export const GET = async (request: Request, { params }: Params) => {
                 (await imageToBase64(vimeoData[0]!.thumbnail_large)),
             },
           },
+      {
+        headers: {
+          ...defaultHeaders,
+        },
+      },
     );
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err) {
@@ -122,6 +147,9 @@ export const GET = async (request: Request, { params }: Params) => {
       },
       {
         status: 500,
+        headers: {
+          ...defaultHeaders,
+        },
       },
     );
   }
